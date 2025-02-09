@@ -17,6 +17,8 @@ user_UI = [[" 1. Search by Author"],
 def view_library_menu():
     print(tabulate(user_UI,tablefmt="grid"))
 
+# To Search Library I researched it and I can do it but. To do it correctly would take to much time.
+# If you would like to share the function Yay!
 def search_library():
     pass
 
@@ -28,9 +30,9 @@ def add_book():
     if not new_book or not author_book:
         print("Both title and author are required!")
         return
-    if new_book and author_book in library:
+    if new_book and author_book in library: # looked right 
         print(f" The book {new_book}, {author_book} already exist in our library!")    
-    if new_book and author_book not in library:
+    if new_book and author_book not in library: # Im still not sure I went over this correct
         library.append((new_book, author_book))
         print(tabulate([(new_book, author_book)],headers=["Book", "Author"], tablefmt="grid"))
         print("This book has been added Successfully")
@@ -40,7 +42,7 @@ def add_book():
 
 while True:
     view_library_menu()
-    choice = input("\n Please an option.")
+    choice = input("\n Please selection an option.")
     if choice == "1":
         search_library()
     elif choice == "2":
